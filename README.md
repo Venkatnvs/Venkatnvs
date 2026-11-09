@@ -80,27 +80,27 @@ I design, build and run live products end to end: AI agents and MCP servers, Pos
 
 <p align="center">
   <a href="https://github.com/Venkatnvs/nvs-bootstrap-forms"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Venkatnvs/Venkatnvs/output/pin-nvs-bootstrap-forms-dark.svg" /><img src="https://raw.githubusercontent.com/Venkatnvs/Venkatnvs/output/pin-nvs-bootstrap-forms-light.svg" alt="nvs-bootstrap-forms: Django app for Bootstrap-styled forms" width="49%" /></picture></a>
-  <a href="https://github.com/Venkatnvs/AgriPulseProject"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Venkatnvs/Venkatnvs/output/pin-krishi-pragya-dark.svg" /><img src="https://raw.githubusercontent.com/Venkatnvs/Venkatnvs/output/pin-krishi-pragya-light.svg" alt="Krishi Pragya: smart irrigation dashboard" width="49%" /></picture></a>
+  <a href="https://github.com/Venkatnvs/chat_with_pdf_llm"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Venkatnvs/Venkatnvs/output/pin-chat-with-pdf-dark.svg" /><img src="https://raw.githubusercontent.com/Venkatnvs/Venkatnvs/output/pin-chat-with-pdf-light.svg" alt="chat_with_pdf_llm: chat with several PDFs using Gemini and embeddings" width="49%" /></picture></a>
   <a href="https://github.com/Venkatnvs/Ai_AdaptiveQuiz-From_Youtube_videos"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Venkatnvs/Venkatnvs/output/pin-adaptive-quiz-dark.svg" /><img src="https://raw.githubusercontent.com/Venkatnvs/Venkatnvs/output/pin-adaptive-quiz-light.svg" alt="AI Adaptive Quiz: Q-learning adaptive assessments" width="49%" /></picture></a>
   <a href="https://github.com/Venkatnvs/Django-webrtc"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Venkatnvs/Venkatnvs/output/pin-nvsmeet-dark.svg" /><img src="https://raw.githubusercontent.com/Venkatnvs/Venkatnvs/output/pin-nvsmeet-light.svg" alt="NvsMeet: video calling with Django and WebRTC" width="49%" /></picture></a>
 </p>
 
 <p align="center">
   <a href="https://pypi.org/project/nvs-bootstrap-forms/"><img src="https://img.shields.io/pypi/v/nvs-bootstrap-forms?label=nvs-bootstrap-forms%20on%20PyPI&style=flat-square&color=1A568C&logo=pypi&logoColor=white" alt="nvs-bootstrap-forms on PyPI" /></a>
-  <a href="https://github.com/Venkatnvs/venkatswaroop.com"><img src="https://img.shields.io/badge/Source-venkatswaroop.com-24292F?style=flat-square&logo=github" alt="Source of venkatswaroop.com" /></a>
-  <a href="https://github.com/Venkatnvs/chat_with_pdf_llm"><img src="https://img.shields.io/badge/Chat_with_PDF-Gemini_%2B_embeddings-24292F?style=flat-square&logo=github" alt="Chat with PDF" /></a>
+  <a href="https://github.com/Venkatnvs/Personal_Ai_Agent_Using_MCP"><img src="https://img.shields.io/badge/Personal_AI_agent-MCP-24292F?style=flat-square&logo=github" alt="Personal AI agent using MCP" /></a>
+  <a href="https://github.com/Venkatnvs/google-gemini-bot"><img src="https://img.shields.io/badge/Gemini_bot-text_%2B_image_chat-24292F?style=flat-square&logo=github" alt="Google Gemini text and image chatbot" /></a>
   <a href="https://github.com/Venkatnvs?tab=repositories&sort=stargazers"><img src="https://img.shields.io/badge/All_repositories-%E2%86%92-1A568C?style=flat-square" alt="All repositories" /></a>
 </p>
 
 ## 💼 Experience
 
-| Role | Where | When | Highlights |
-| --- | --- | --- | --- |
-| **Founder & Full Stack Engineer** | NVS Ventures | May 2026 – now | Sole engineer for Koltrix and ReminderIt; production on Ubuntu with Docker Compose, Nginx, Redis and MongoDB |
-| **Full Stack Developer** | Xreacher | Jun 2025 – Oct 2026 | Chatbot messaging handling **10K+ automated DMs a day** across **50+ accounts**; Prometheus and Grafana monitoring |
-| **Lead Full Stack & DevOps Developer** | GKVK Watershed Management | Aug 2024 – Jun 2025 | Led a team of **4**; Cloud Run microservices at **99.5% uptime**; CI/CD cut releases from **3 days to under 4 hours** |
-| **Full Stack Intern** | Bryckel.AI | May 2024 – Aug 2024 | React and Django features, tested with Jest and Pytest |
-| **Lead Full Stack Developer** (freelance) | Skillmithra.com | Jan 2024 – May 2024 | Learning platform on Django, PostgreSQL and AWS EC2 |
+| Role | Highlights |
+| --- | --- |
+| **Founder & Full Stack Engineer**<br/>NVS Ventures · <sub>May 2026 – now</sub> | Sole engineer for Koltrix and ReminderIt; production on Ubuntu with Docker Compose, Nginx, Redis and MongoDB |
+| **Full Stack Developer**<br/>Xreacher · <sub>Jun 2025 – Oct 2026</sub> | Chatbot messaging handling **10K+ automated DMs a day** across **50+ accounts**; Prometheus and Grafana monitoring |
+| **Lead Full Stack & DevOps Developer**<br/>GKVK Watershed Management · <sub>Aug 2024 – Jun 2025</sub> | Led a team of **4**; Cloud Run microservices at **99.5% uptime**; CI/CD cut releases from **3 days to under 4 hours** |
+| **Full Stack Intern**<br/>Bryckel.AI · <sub>May 2024 – Aug 2024</sub> | React and Django features, tested with Jest and Pytest |
+| **Lead Full Stack Developer** (freelance)<br/>Skillmithra.com · <sub>Jan 2024 – May 2024</sub> | Learning platform on Django, PostgreSQL and AWS EC2 |
 
 ## 🏆 Patent & awards
 

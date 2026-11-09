@@ -37,13 +37,13 @@ jobs:
             options: "username=Venkatnvs&show_icons=true&include_all_commits=true&rank_icon=github&card_width=440&custom_title=GitHub%20stats"
           - name: langs
             card: top-langs
-            options: "username=Venkatnvs&layout=compact&langs_count=8&card_width=360"
+            options: "username=Venkatnvs&layout=compact&langs_count=6&card_width=360&hide=jupyter%20notebook,html,css&size_weight=0.5&count_weight=0.5"
           - name: pin-nvs-bootstrap-forms
             card: pin
             options: "username=Venkatnvs&repo=nvs-bootstrap-forms&show_owner=false&description_lines_count=2"
-          - name: pin-krishi-pragya
+          - name: pin-chat-with-pdf
             card: pin
-            options: "username=Venkatnvs&repo=AgriPulseProject&show_owner=false&description_lines_count=2"
+            options: "username=Venkatnvs&repo=chat_with_pdf_llm&show_owner=false&description_lines_count=2"
           - name: pin-adaptive-quiz
             card: pin
             options: "username=Venkatnvs&repo=Ai_AdaptiveQuiz-From_Youtube_videos&show_owner=false&description_lines_count=2"
