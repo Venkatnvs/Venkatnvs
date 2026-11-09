@@ -1,0 +1,123 @@
+# Builds the profile README widgets as static SVGs and publishes them to the `output` branch.
+# The README loads them from raw.githubusercontent.com, so no third-party card server can rate-limit or go down.
+name: Profile widgets
+
+on:
+  schedule:
+    - cron: "17 0 * * *" # daily, 05:47 IST
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/profile-widgets.yml"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-widgets
+  cancel-in-progress: true
+
+env:
+  # Brand colours from venkatswaroop.com (DESIGN.md): #1A568C on light, #8AB8E6 on dark.
+  DARK: "&hide_border=true&bg_color=0d1117&title_color=8AB8E6&icon_color=8AB8E6&text_color=c9d1d9&ring_color=8AB8E6"
+  LIGHT: "&hide_border=true&bg_color=ffffff&title_color=1A568C&icon_color=1A568C&text_color=24292f&ring_color=1A568C"
+
+jobs:
+  cards:
+    name: card ${{ matrix.item.name }} (${{ matrix.theme }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        theme: [dark, light]
+        item:
+          - name: stats
+            card: stats
+            options: "username=Venkatnvs&show_icons=true&include_all_commits=true&rank_icon=github&card_width=440&custom_title=GitHub%20stats"
+          - name: langs
+            card: top-langs
+            options: "username=Venkatnvs&layout=compact&langs_count=8&card_width=360"
+          - name: pin-nvs-bootstrap-forms
+            card: pin
+            options: "username=Venkatnvs&repo=nvs-bootstrap-forms&show_owner=false&description_lines_count=2"
+          - name: pin-krishi-pragya
+            card: pin
+            options: "username=Venkatnvs&repo=AgriPulseProject&show_owner=false&description_lines_count=2"
+          - name: pin-adaptive-quiz
+            card: pin
+            options: "username=Venkatnvs&repo=Ai_AdaptiveQuiz-From_Youtube_videos&show_owner=false&description_lines_count=2"
+          - name: pin-nvsmeet
+            card: pin
+            options: "username=Venkatnvs&repo=Django-webrtc&show_owner=false&description_lines_count=2"
+    steps:
+      - uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: ${{ matrix.item.card }}
+          options: ${{ matrix.item.options }}${{ matrix.theme == 'dark' && env.DARK || env.LIGHT }}
+          path: dist/${{ matrix.item.name }}-${{ matrix.theme }}.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: card-${{ matrix.item.name }}-${{ matrix.theme }}
+          path: dist/
+          retention-days: 1
+
+  snake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake-light.svg?palette=github-light&color_snake=#1A568C
+            dist/snake-dark.svg?palette=github-dark&color_snake=#8AB8E6
+      - uses: actions/upload-artifact@v4
+        with:
+          name: snake
+          path: dist/
+          retention-days: 1
+
+  contrib-3d:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: yoshi389111/github-profile-3d-contrib@v0.9.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+      - name: Keep the two themes the README uses
+        run: |
+          mkdir -p dist
+          cp profile-3d-contrib/profile-night-rainbow.svg dist/contrib-3d-dark.svg
+          cp profile-3d-contrib/profile-green-animate.svg dist/contrib-3d-light.svg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: contrib-3d
+          path: dist/
+          retention-days: 1
+
+  publish:
+    needs: [cards, snake, contrib-3d]
+    # Runs only when every widget built, so a failed run keeps yesterday's widgets instead of blanking them.
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: List widgets
+        run: ls -la dist
+      - uses: crazy-max/ghaction-github-pages@v5
+        with:
+          target_branch: output
+          build_dir: dist
+          keep_history: false
+          jekyll: false
+          commit_message: "Update profile widgets"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
